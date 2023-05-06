@@ -24,15 +24,15 @@ namespace ShcoolLearn.Pages
         public MenuPage()
         {
             InitializeComponent();
-            if(App.LoggedClient.RoleID == 2)
+            Refresh();
+            if (App.LoggedClient.RoleID == 2)
             {
                 AddBtn.Visibility = Visibility.Collapsed;
                 
-            }
-            
+            }    
             ServiceLV.ItemsSource = App.DB.Service.ToList();
             GeneralCount.Text = App.DB.Service.Count().ToString();
-
+            
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
@@ -45,7 +45,6 @@ namespace ShcoolLearn.Pages
             Refresh();
         }
 
-      
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +59,7 @@ namespace ShcoolLearn.Pages
             {
                 App.DB.Service.Remove(selService);
                 App.DB.SaveChanges();
+                Refresh();
             }
         }
 
@@ -104,6 +104,7 @@ namespace ShcoolLearn.Pages
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AEServise(new Service()));
+            Refresh();
         }
 
         private void ServiceLV_SelectionChanged(object sender, SelectionChangedEventArgs e)

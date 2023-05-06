@@ -13,21 +13,21 @@ namespace ShcoolLearn.Components.Model
             get
             {
                 var time = StartTime - DateTime.Now;
-                return $"Начало в {StartTime.ToString("F")}. осталось: {time.ToString(@"hh\:mm")}";
+                return $"Начало: {StartTime.ToString("F")}, осталось: {time.ToString(@"hh\:mm")}";
             }
         }
 
-        public string ColorTime
+        public string ColorTimes
         {
             get
             {
                 if (StartTime - DateTime.Now < TimeSpan.FromHours(1))
                 {
-                    return "red";
+                    return "#ff0000";
                 }
                 else
                 {
-                    return "";
+                    return "#ffffff";
                 }
             }
         }

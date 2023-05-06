@@ -36,7 +36,16 @@ namespace ShcoolLearn.Pages
 
         private void BSave_Click(object sender, RoutedEventArgs e)
         {
-            string error = "";
+            if(contextService.DurationInSeconds > 14400)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Введите время не больше 4 часов (15000 секунд).");
+                NavigationService.Navigate(new MenuPage());
+            }
+
 
             if (contextService.ID == 0)
             {
@@ -50,7 +59,6 @@ namespace ShcoolLearn.Pages
                 NavigationService.GoBack();
                 
             }
-
         }
 
         private void BCancel_Click(object sender, RoutedEventArgs e)

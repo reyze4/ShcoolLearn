@@ -49,21 +49,25 @@ namespace ShcoolLearn.Pages
 
         private void BSignUp_Click(object sender, RoutedEventArgs e)
         {
+
             if (ClientCb.SelectedItem == null)
             {
-                MessageBox.Show("Выберите клиента!!"); return;
+                MessageBox.Show("Выберите клиента!!");
+                return;
             }
             var DataTime = DateTime.Parse(DataDP.Text);
             var Time = TimeSpan.Parse(DataTB.Text);
             App.DB.ClientService.Add(new ClientService
             {
-
                 Service = contextService,
                 Client = (Client)ClientCb.SelectedItem,
                 StartTime = new DateTime(DataTime.Year, DataTime.Month, DataTime.Day, Time.Hours, Time.Minutes, 0)
-            });
-            MessageBox.Show("Успешно"); App.DB.SaveChanges();
+            }
+            );
+            MessageBox.Show("Успешно");
+            App.DB.SaveChanges();
             NavigationService.Navigate(new MenuPage());
+           
         }
     }
 }

@@ -46,10 +46,11 @@
                            Margin="0 0 20 0"
                            >Логин</TextBlock>
                 <TextBox x:Name="LoginTb"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
                          HorizontalContentAlignment="Center"
                          FontFamily="Comic Sans MS"
-                         FontSize="20"
-                         
+                         FontSize="15"
                 ></TextBox>
             </StackPanel>
             
@@ -62,33 +63,28 @@
 
                 <Border CornerRadius="15"
                         BorderBrush="#FF04A0FF"
-                        BorderThickness="2"
+                        BorderThickness="3"
                         Background="#FFE7FABF"
                         Width="250"
                         Height="30"
                         Margin="0 5 0 0">
-                    <PasswordBox x:Name="PasswordTb">
-                    
+                    <PasswordBox x:Name="PasswordTb"
+                                 PasswordChar="*"
+                                 Height="30"
+                                 Width="230"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center">
                     </PasswordBox>
                 </Border>
 
             </StackPanel>
-            
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <CheckBox x:Name="SaveCb" IsChecked="True" Margin="7"
-                          Foreground="#FF04A0FF"
-                          BorderBrush="#FF04A0FF"
-                          FontFamily="Comic Sans MS"></CheckBox>
-                <TextBlock FontSize="15"
-                           Margin="0 5 0 0"
-                           Foreground="#FF04A0FF"
-                           FontFamily="Comic Sans MS"
-                           >Запомнить меня</TextBlock>
-            </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
+                        VerticalAlignment="Center"
+                        Margin="0 20 0 0">
                 
                 <Button Name="Auth"
                         Foreground="#FF04A0FF" 

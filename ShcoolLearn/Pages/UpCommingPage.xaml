@@ -40,25 +40,36 @@
 
 
         <StackPanel HorizontalAlignment="Center"
-                    
-                    Grid.Row="1" Background="#FF04A0FF" Width="800">
-            <TextBlock HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                    FontSize="25"
-                    Text="Ближайшие записи"
-                    FontFamily="Arial Black"
-                    Foreground="White"
-                    />
+                    Grid.Row="1" >
+            <Border BorderBrush="#FF04A0FF"
+                    BorderThickness="3"
+                    Width="790"
+                    Height="30"
+                    Margin="0 2 0 0"
+                    CornerRadius="15">
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Text="Ближайшие записи"
+                           Foreground="#FF04A0FF"
+                           FontFamily="Comic Sans MS"
+                           HorizontalAlignment="Center"
+                           FontSize="15">
+                </TextBlock>
+            </Border>
         </StackPanel>
 
-        <ListView  x:Name="LVUpComingList" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView  x:Name="LVUpComingList" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=3}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Background="{Binding ColorTime}" BorderBrush="LightGray" BorderThickness="2" Width="750">
+                    <Border 
+                            Width="760"
+                            BorderBrush="#FF04A0FF"
+                            BorderThickness="2"
+                            
+                            CornerRadius="15">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"></ColumnDefinition>
-                                <ColumnDefinition Width="750"></ColumnDefinition>
+                                <ColumnDefinition Width="170"></ColumnDefinition>
+                                <ColumnDefinition Width="730"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"></RowDefinition>
@@ -67,21 +78,106 @@
                                 <RowDefinition Height="60"></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <TextBlock HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Text="{Binding Service.Title }"></TextBlock>
-                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-                                <TextBlock Text="{Binding Client.FName}" ></TextBlock>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
-                                <TextBlock Text="{Binding Client.Email, StringFormat='Email: {0}'}"></TextBlock>
-                            </StackPanel>
-                            <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3">
-                                <TextBlock Text="{Binding Client.Phone, StringFormat='Номер телефона: {0}'}" ></TextBlock>
-                                <TextBlock Text="{Binding TimeEnd}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
+                            <Border Grid.Column="1" Grid.Row="0"
+                                        BorderBrush="#FF04A0FF"
+                                        BorderThickness="3"
+                                        Width="575"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="15"
+                                        Margin="5 5 5 0">
+                                <TextBlock HorizontalAlignment="Left"
+                                           Grid.Column="1" Grid.Row="0"
+                                           Text="{Binding Service.Title}"
+                                           FontFamily="Comic Sans MS"
+                                           Margin="5 5 0 0"
+                                           FontSize="15"
+                                           >
+                                </TextBlock>
+                            </Border>
 
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                                <Border BorderBrush="#FF04A0FF"
+                                        BorderThickness="3"
+                                        Width="575"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="15"
+                                        Margin="5 5 0 0">
+                                    <TextBlock HorizontalAlignment="Left"
+                                           Grid.Column="1" Grid.Row="0"
+                                           Text="{Binding Client.FName}"
+                                           FontFamily="Comic Sans MS"
+                                           Margin="5 5 0 0"
+                                           FontSize="15"
+                                           >
+                                    </TextBlock>
+                                </Border>
                             </StackPanel>
-                            <Image Grid.Column="0" Grid.RowSpan="4" Source="{Binding Service.MainImage}"></Image>
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                                <Border BorderBrush="#FF04A0FF"
+                                        BorderThickness="3"
+                                        Width="575"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="15"
+                                        Margin="5 5 0 0">
+                                    <TextBlock HorizontalAlignment="Left"
+                                           Grid.Column="1" Grid.Row="0"
+                                           Text="{Binding Client.Email,
+                                           StringFormat='Email: {0}'}"
+                                           FontFamily="Comic Sans MS"
+                                           Margin="5 5 0 0"
+                                           FontSize="15"
+                                           >
+                                    </TextBlock>
+                                </Border>
+                            </StackPanel>
+
+
+                        <Border  BorderBrush="#FF04A0FF"
+                                 Grid.Column="1" Grid.Row="3"
+                                 BorderThickness="3"
+                                 Width="575"
+                                 HorizontalAlignment="Left"
+                                 CornerRadius="15"
+                                 Margin="5 5 0 5">
+                            <StackPanel Orientation="Vertical" Width="562">
+                                
+                                <TextBlock 
+                                           Grid.Column="1" Grid.Row="0"
+                                           Text="{Binding Client.Phone,
+                                           StringFormat='Номер телефона: {0}'}"
+                                           FontFamily="Comic Sans MS"
+                                           Margin="5 0 0 0"
+                                           FontSize="15">
+                                </TextBlock>
+
+                                <TextBlock 
+                                           Grid.Column="1" Grid.Row="0"
+                                           Text="{Binding TimeConsole}"
+                                           Foreground="{Binding ColorTimes}"
+                                           FontFamily="Comic Sans MS"
+                                           Margin="5 0 0 0"
+                                           FontSize="15">
+                                </TextBlock>
+                                
+                            </StackPanel>
+                        </Border>
+                            <Border Grid.Column="0" Grid.RowSpan="4"
+                                        BorderBrush="#FF04A0FF"
+                                        BorderThickness="3"
+                                        Height="150"
+                                        Width="150"
+                                        Margin="10 0 0 0"
+                                        CornerRadius="15">
+                                <Image Grid.Column="0" Grid.RowSpan="4"
+                                       Source="{Binding Service.MainImagePath}"
+                                       Width="130"
+                                       Height="130"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center">
+
+                                </Image>
+                            </Border>
                         </Grid>
                     </Border>
                 </DataTemplate>

@@ -114,15 +114,13 @@
                          Height="30"
                          MaxLength="7"
                          Margin="10 0 0 0"
-                         FontFamily="Comic Sans MS"
-                         PreviewTextInput="TextBox_PreviewTextInput_1"/>
+                         FontFamily="Comic Sans MS"/>
                 <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Left"
-                            Margin="5 0 0 0">
+                            HorizontalAlignment="Left">
                     <Button x:Name="BSave"
                     Content="Сохранить"
                     Click="BSave_Click"
-                    Margin="0 15 0 0" 
+                    Margin="10 15 0 0" 
                     Foreground="#FF04A0FF"
                     />
 
@@ -140,10 +138,12 @@
 
                     <Border BorderBrush="#FF04A0FF"
                             BorderThickness="3"
-                            Width="305">
+                            Width="315"
+                            Height="305"
+                            CornerRadius="15">
                         <Image Height="280"
                                Width="300"
-                   Source="{Binding MainImagePath}" />
+                               Source="{Binding MainImagePath}" />
                     </Border>
                     
                     <Button Name="EditImgBtn"

@@ -35,7 +35,7 @@ namespace ShcoolLearn.Pages
 
         private void Refresh()
         {
-            DateTime tommorow = DateTime.Today.AddDays(1).AddHours(DateTime.Now.Hour);
+            DateTime tommorow = DateTime.Today.AddDays(2).AddHours(DateTime.Now.Hour);
             LVUpComingList.ItemsSource = App.DB.ClientService.Where(x => x.StartTime >= DateTime.Now && x.StartTime <= tommorow).ToList().OrderBy(x => x.StartTime);
         }
 
